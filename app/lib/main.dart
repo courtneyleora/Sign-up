@@ -103,11 +103,11 @@ class MyCustomFormState extends State<MyCustomForm> {
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState?.saveAndValidate() ?? false) {
-                    // Show success message or navigate
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        content: Text('Signup successful!'),
-                        backgroundColor: Colors.green,
+                    // Navigate to ConfirmationPage on success
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ConfirmationPage(),
                       ),
                     );
                   } else {
